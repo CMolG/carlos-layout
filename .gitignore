@@ -1,0 +1,10 @@
+# Dependencias instaladas
+node_modules/
+
+# Carpeta de build
+dist/
+
+.idea/
+.vscode/
+.DS_Store
+.env

@@ -1,0 +1,29 @@
+{
+  "name": "carlos-layout",
+  "version": "1.0.4",
+  "description": "A public and simple component pack library for React and Next.js",
+  "main": "dist/index.js",
+  "keywords": [
+    "react",
+    "next.js",
+    "layout",
+    "UI",
+    "pack"
+  ],
+  "author": "Carlos Molina Galindo",
+  "license": "Apache-2.0",
+  "scripts": {
+    "build": "cross-env NODE_ENV=production babel src --out-dir dist --copy-files",
+    "clean": "rm -rf dist"
+  },
+  "peerDependencies": {
+    "react": ">=18.2.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.26.4",
+    "@babel/core": "^7.26.0",
+    "@babel/preset-react": "^7.26.3",
+    "cross-env": "^7.0.3",
+    "react": "^18.2.0"
+  }
+}
