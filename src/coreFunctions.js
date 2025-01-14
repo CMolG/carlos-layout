@@ -15,3 +15,14 @@ export const calculateAspectRatio = (relation) => {
   if (!width || !height) return null;
   return (height / width) * 100;
 };
+
+export function updateOrCreateMetaTag(name, content, isProperty = false) {
+  const tagName = isProperty ? 'property' : 'name';
+  let tag = document.querySelector(`meta[${tagName}="${name}"]`);
+  if (!tag) {
+    tag = document.createElement('meta');
+    tag.setAttribute(tagName, name);
+    document.head.appendChild(tag);
+  }
+  tag.setAttribute('content', content);
+}

@@ -10,7 +10,7 @@ const Article = (props) => {
   const defaultStyles = {
     padding: 10,
     border: testLayout && "2px solid red",
-    textAlign: 'center',
+    textAlign: 'flex-start',
     ...style,
   };
 

@@ -1,5 +1,5 @@
 import React from "react";
-import {calculateAspectRatio, propagateProps} from "../coreFunctions";
+import {calculateAspectRatio, propagateProps} from "../../coreFunctions";
 
 const Container = (props) => {
   const {

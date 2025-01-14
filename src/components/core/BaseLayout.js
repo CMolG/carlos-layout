@@ -1,5 +1,5 @@
 import React from 'react';
-import {propagateProps} from "../coreFunctions";
+import {propagateProps} from "../../coreFunctions";
 
 /**
  * BaseLayout
@@ -47,8 +47,6 @@ const BaseLayout = (props) => {
     fontFamily: font || presetStyles.fontFamily || 'inherit',
     ...style,
   };
-
-
 
   return (
     <div className="mx-auto p-4 max-w-screen-xl min-h-screen flex items-center justify-center" style={mergedStyle}>
