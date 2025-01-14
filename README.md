@@ -29,7 +29,6 @@ $ yarn add react
     - [Getting Started](#getting-started)
     - [Contributing](#contributing)
     - [Built With](#built-with)
-    - [Versioning](#versioning)
     - [Authors](#authors)
     - [License](#license)
 
@@ -49,12 +48,9 @@ Just install it and try it! so simple!
 ## Built With
 
 * JavaScript
+* Tailwind CSS
 * React - 18.2.0
 * framer-motion - 11.18.0
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).
 
 ## Authors
 
