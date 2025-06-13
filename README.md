@@ -3,61 +3,151 @@
 ![NPM License](https://img.shields.io/npm/l/carlos-layout)
 
 # carlos-layout
-> This is a package for simplifying (or try to) the styling of components for React.js and Next.js so you don't need to worry for installing any other styling package for starting building your page.
 
-> "Well, Carlos is my name, wasn't it obvious?"
+`carlos-layout` is a lightweight component library for React and Next.js. It ships layout utilities, text elements, and animations powered by Tailwind CSS and framer-motion.
 
--&nbsp;Carlos
+## Requirements
 
-## Prerequisites
+- React `>=18.2.0`
 
-This project requires React version 18.2.0 or above, so just install the last version if you want, is fine!
+Install it in your project if you don't have it yet:
 
-```sh
-$ npm i react
-```
-or using yarn
-
-```sh
-$ yarn add react
+```bash
+npm i react
+# or
+yarn add react
 ```
 
-## Table of contents
+## Installation
 
-- [carlos-layout](#carlos-layout)
-    - [Table of contents](#table-of-contents)
-    - [Getting Started](#getting-started)
-    - [Contributing](#contributing)
-    - [Built With](#built-with)
-    - [Authors](#authors)
-    - [License](#license)
+```bash
+npm install carlos-layout
+# or
+yarn add carlos-layout
+```
 
-## Getting Started
+## Table of Contents
 
-Just install it and try it! so simple!
+- [Quick Start](#quick-start)
+- [Components](#components)
+  - [BaseLayout](#baselayout)
+  - [Container](#container)
+  - [Modal](#modal)
+  - [RootPage](#rootpage)
+  - [Text Components](#text-components)
+  - [Animations](#animations)
+- [Contributing](#contributing)
+- [Authors](#authors)
+- [License](#license)
+
+## Quick Start
+
+```jsx
+import {
+  BaseLayout,
+  Container,
+  Title,
+  Paragraph,
+  Article,
+  AnimationWrapper,
+} from 'carlos-layout';
+
+function App() {
+  return (
+    <BaseLayout preset="brutal">
+      <Container style={{ width: '80%' }}>
+        <Title>Hello world</Title>
+        <Article>
+          <Paragraph>Article content.</Paragraph>
+        </Article>
+        <AnimationWrapper animationType="fadeIn">
+          <p>Appears with animation.</p>
+        </AnimationWrapper>
+      </Container>
+    </BaseLayout>
+  );
+}
+```
+
+## Components
+
+### BaseLayout
+
+Wrap your entire application. Set a font, apply style **presets**, and enable a layout test mode to visualize boundaries.
+
+```jsx
+<BaseLayout font="'Inter', sans-serif" preset="brutal" testLayout>
+  {...content}
+</BaseLayout>
+```
+
+### Container
+
+Create sections or organize blocks. Accepts styles and the `aspectRatio` option to maintain proportions.
+
+```jsx
+<Container aspectRatio="16/9" style={{ backgroundColor: '#eee' }}>
+  {...content}
+</Container>
+```
+
+### Modal
+
+Simple dialog box that closes when clicking outside or pressing `Esc`.
+
+```jsx
+<Modal isOpen={open} onClose={() => setOpen(false)}>
+  <Title>Title</Title>
+  <Paragraph>Modal body</Paragraph>
+</Modal>
+```
+
+### RootPage
+
+Automatically loads metadata from a JSON file or by page id.
+
+```jsx
+<RootPage pageId="home">
+  {...content}
+</RootPage>
+```
+
+### Text Components
+
+- **Title** – Main heading.
+- **Paragraph** – Justified paragraphs.
+- **Article** – Styled container for grouping text.
+
+```jsx
+<Article>
+  <Title>My title</Title>
+  <Paragraph>First paragraph...</Paragraph>
+</Article>
+```
+
+### Animations
+
+`AnimationWrapper` applies predefined animations to its content. Available types: `fadeIn`, `slideUp`, `zoomIn`, `rotate`, `bounce`, and `default`.
+
+```jsx
+<AnimationWrapper animationType="zoomIn" config={{ duration: 0.5 }}>
+  <img src="logo.png" alt="logo" />
+</AnimationWrapper>
+```
 
 ## Contributing
 
-1.  Fork it!
-2.  Create your feature branch: `git checkout -b my-new-feature`
-3.  Add your changes: `git add .`
-4.  Commit your changes: `git commit -am 'Add some feature'`
-5.  Push to the branch: `git push origin my-new-feature`
-6.  Submit a pull request :sunglasses:
-
-## Built With
-
-* JavaScript
-* Tailwind CSS
-* React - 18.2.0
-* framer-motion - 11.18.0
+1. Fork the repository.
+2. Create a branch for your feature `git checkout -b my-change`.
+3. Make your modifications and run `npm run build` to compile.
+4. Submit your *pull request*.
 
 ## Authors
 
-* **Carlos Molina Galindo** - *Creator* - [CMolG](https://github.com/CMolG)
+- **Carlos Molina Galindo** – [CMolG](https://github.com/CMolG)
 
-See also the list of [contributors](https://github.com/CMolG/carlos-layout/contributors) who participated in this project.
+See the list of [contributors](https://github.com/CMolG/carlos-layout/contributors) for more information.
 
 ## License
 
-[Apache 2.0 License](https://www.apache.org/licenses/LICENSE-2.0) © Carlos Molina Galindo
+Distributed under the [Apache 2.0 License](https://www.apache.org/licenses/LICENSE-2.0).
