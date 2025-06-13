@@ -39,7 +39,7 @@ const Modal = (props) => {
   return (
     <div className="position-absolute flex inset-0 p-5 bg-gray-700 bg-opacity-75 cursor-pointer" style={defaultStyles} onClick={onClose}>
       <div className="bg-white p-5 rounded-3 shadow-lg w-100 lg:w-75 mx-auto cursor-default" style={defaultStyles} onClick={handleContentClick}>
-        {React.Children.map(children, (child) => propagateProps(child, { testLayout, ...restProps }))}
+        {React.Children.map(children, (child) => propagateProps(child, { testLayout, style, ...restProps }))}
       </div>
     </div>
   );

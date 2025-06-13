@@ -23,7 +23,7 @@ const Container = (props) => {
 
   return (
     <div style={mergedStyle} className={aspectRatioPadding ? 'aspect-w-auto' : ''}>
-      {React.Children.map(children, (child) => propagateProps(child, { testLayout, ...restProps }))}
+      {React.Children.map(children, (child) => propagateProps(child, { testLayout, style, ...restProps }))}
     </div>
   );
 };
