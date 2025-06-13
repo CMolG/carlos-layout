@@ -1,9 +1,11 @@
 import React from "react";
 
 export const propagateProps = (child, props) => {
-  const { style, ...restProps } = props;
+  const { style: newStyle, ...restProps } = props;
   if (React.isValidElement(child)) {
-    return React.cloneElement(child, restProps);
+    const childProps = child.props || {};
+    const mergedStyle = { ...newStyle, ...childProps.style };
+    return React.cloneElement(child, { ...restProps, style: mergedStyle });
   }
   return child;
 };

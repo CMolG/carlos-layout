@@ -57,7 +57,7 @@ const BaseLayout = (props) => {
           <div style={{position: 'absolute', right: 5, width: '10px', height: '2px', backgroundColor: testColor}}/>
         </>
       }
-      {React.Children.map(children, (child) => propagateProps(child, { font, preset, testLayout, ...restProps }))}
+      {React.Children.map(children, (child) => propagateProps(child, { font, preset, testLayout, style, ...restProps }))}
     </div>
   );
 }
